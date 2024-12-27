@@ -64,3 +64,41 @@ class Calculator {
 const calculator = new Calculator();
 console.log(calculator.add(1, 2));
 console.log(calculator.add(1, 2, 3));
+
+enum Role {
+  ADMIN = "ADMIN",
+  USER = "USER",
+  GUEST = "GUEST",
+  MANAGER = "MANAGER",
+}
+
+const employees: {
+  id: number;
+  name: string;
+  age: number;
+  role: Role;
+}[] = [];
+
+employees.push({ id: 1, name: "John", age: 30, role: Role.MANAGER });
+employees.push({ id: 2, name: "Jane", age: 25, role: Role.USER });
+employees.push({ id: 3, name: "Doe", age: 20, role: Role.GUEST });
+employees.push({ id: 4, name: "John", age: 30, role: Role.ADMIN });
+
+console.log(employees);
+
+function findById(
+  id: number
+): { id: number; name: string; age: number; role: Role } | undefined {
+  const user =  employees.find((employee) => employee.id === id);
+  if(!user){
+    throw new Error("User not found.");
+  }
+  return user;
+}
+
+try {
+  console.log(findById(9));
+} catch (error:any) {
+  console.log(error.message);
+}
+

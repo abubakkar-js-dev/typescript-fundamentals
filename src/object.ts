@@ -9,5 +9,3 @@ const person2: {
     weight: 70,
     hobbies: ["reading", "coding", "hiking"]
 }
-
-console.log(person2.name,"from object ts");
