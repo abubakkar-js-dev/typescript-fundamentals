@@ -1,6 +1,8 @@
 import "./array.js";
 import "./object.js"
 import "./func.js"
+import "./typeInference.js"
+import "./typeAlias.js"
 
 export function aggregateArray(arr: number[]) {
   return {
