@@ -1,4 +1,7 @@
 import * as crypto from "crypto";
+import userData from '../public/user.json' assert { type: 'json' };
+import { off } from "process";
+
 // type alias in TypeScript
 
 // type alias
@@ -66,3 +69,36 @@ function printAddress (address: User['address']){
 }
 
 printAddress({street: '123 Main St', city: 'Boston', country: 'USA'});
+
+
+
+
+
+const user2 = userData as User;
+
+console.log(user2,'this is user');
+
+function printSkills(skills: User['skills']){
+  return skills.forEach((skill)=>{
+    console.log(skill);
+  })
+}
+
+function printSkill(skill: User['skills'][number]){
+  return 'This is for single skills type';
+}
+
+printSkills(userData.skills);
+
+
+type CB=(arg1: string,arg2: number) => string;
+
+
+function testCB(cb: CB){
+  cb('test',1);
+}
+
+testCB((arg1,arg2)=>{
+  console.log(arg1,arg2);
+  return "test";
+})

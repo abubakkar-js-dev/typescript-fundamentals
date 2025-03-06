@@ -3,6 +3,8 @@ import "./object.js"
 import "./func.js"
 import "./typeInference.js"
 import "./typeAlias.js"
+import "./union.js"
+import "./generic.js"
 
 export function aggregateArray(arr: number[]) {
   return {

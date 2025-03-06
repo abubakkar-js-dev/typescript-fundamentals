@@ -1,0 +1,12 @@
+{
+  "id": 101,
+  "firstName": "John",
+  "lastName": "Doe",
+  "age": 25,
+  "skills": ["JavaScript", "TypeScript", "React", "Node.js"],
+  "address": {
+    "street": "1234 Elm Street",
+    "city": "Los Angeles",
+    "country": "USA"
+  }
+}
